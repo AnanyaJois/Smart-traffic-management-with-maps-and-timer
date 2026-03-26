@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Smart Traffic Management</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <nav>
+        <button onclick="showPage('home')">Home</button>
+        <button onclick="showPage('dashboard')">Dashboard</button>
+        <button onclick="showPage('analytics')">Analytics</button>
+        <button onclick="showPage('admin')">Control Panel</button>
+        <button onclick="showPage('feedback')">Feedback</button>
+        <button onclick="showPage('about')">About</button>
+    </nav>
+
+    <div id="home" class="page">
+        <h1>Smart Traffic Management</h1>
+        <p>Making city traffic smarter, safer, and faster.</p>
+    </div>
+
+    <div id="dashboard" class="page">
+        <h2>Live Traffic Dashboard</h2>
+        <iframe title="Map" width="100%" height="300" style="border: 0"
+            src="https://www.openstreetmap.org/export/embed.html?bbox=77.5946%2C12.9716%2C77.5946%2C12.9716&amp;layer=mapnik">
+        </iframe>
+        <h3 id="traffic">Current Traffic: Moderate</h3>
+    </div>
+
+    <div id="analytics" class="page">
+        <h2>Traffic Analytics</h2>
+        <svg width="300" height="100">
+            <rect x="0" y="80" width="30" height="20" fill="#4caf50"/>
+            <rect x="40" y="60" width="30" height="40" fill="#4caf50"/>
+            <rect x="80" y="40" width="30" height="60" fill="#4caf50"/>
+            <rect x="120" y="50" width="30" height="50" fill="#4caf50"/>
+            <rect x="160" y="70" width="30" height="30" fill="#4caf50"/>
+            <rect x="200" y="20" width="30" height="80" fill="#4caf50"/>
+            <rect x="240" y="30" width="30" height="70" fill="#4caf50"/>
+        </svg>
+        <p>Vehicle count over the last 7 hours</p>
+    </div>
+
+    <div id="admin" class="page">
+        <h2>Admin Control Panel</h2>
+        <p>Current Signal: <b id="signal" style="color:red">Red</b></p>
+        <button onclick="setSignal('Red')">Red</button>
+        <button onclick="setSignal('Yellow')">Yellow</button>
+        <button onclick="setSignal('Green')">Green</button>
+
+        <h3>Signal Timing Control</h3>
+        <label for="timer">Set Signal Timer (in seconds):</label>
+        <input type="number" id="timer" min="5" value="10">
+        <button onclick="startTimer()">Start Timer</button>
+        <p id="timerStatus"></p>
+
+        <h3>System Connectivity</h3>
+        <p id="connectivityStatus">Status: <span style="color:green;">Connected</span></p>
+
+        <h3>Incident Management</h3>
+        <form onsubmit="submitIncident(event)">
+            <textarea id="incidentText" rows="3" placeholder="Describe incident..." required></textarea>
+            <button type="submit">Report Incident</button>
+        </form>
+        <ul id="incidentList"></ul>
+    </div>
+
+    <div id="feedback" class="page">
+        <h2>User Feedback</h2>
+        <form onsubmit="submitFeedback(event)">
+            <textarea id="feedbackMsg" rows="4" placeholder="Your suggestions..." required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="feedbackThanks" style="display:none">Thank you for your feedback!</p>
+    </div>
+
+    <div id="about" class="page">
+        <h2>About Us</h2>
+        <p>We are Team SmartTraffic, passionate about making urban mobility efficient and safe.</p>
+        <h3>Contact</h3>
+        <p>Email: smarttraffic@hackathon.com</p>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
