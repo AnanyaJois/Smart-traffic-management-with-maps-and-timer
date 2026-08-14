@@ -2,7 +2,11 @@
 
 A web-based smart traffic management system designed to help monitor and control traffic signals through an interactive dashboard. The system provides map-based traffic visualization, adjustable signal timers, and priority handling for emergency situations such as ambulances and VIP vehicles.
 
-## 📸 Project Screenshot
+Screenshot:
+<img width="1909" height="1040" alt="image" src="https://github.com/user-attachments/assets/fb7dc3cb-5570-4b11-af0c-cd745fee3854" />
+<img width="1909" height="1080" alt="image" src="https://github.com/user-attachments/assets/b932acf0-c7f4-444c-b4b9-1d574b8e2fb2" />
+<img width="1912" height="1080" alt="image" src="https://github.com/user-attachments/assets/61b5df4a-48a6-44d3-8bb2-776f8fcf9778" />
+
 
 ### Smart Traffic Management Dashboard
 
